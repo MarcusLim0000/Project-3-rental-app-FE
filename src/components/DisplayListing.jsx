@@ -1,7 +1,7 @@
 function DisplayListing() {
     return(
         <div>
-            DisplayListing
+            DisplayListing - fetch methods to pull data from database on listing details
         </div>
     )
 }

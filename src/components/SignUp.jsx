@@ -1,6 +1,6 @@
 function SignUp() {
     return(
-        <div style={{border: '1px solid blue'}}>
+        <form style={{border: '1px solid blue'}}>
             SignUp
             <br/>
             <input label='name' placeholder='name pls' type='text'></input>
@@ -8,7 +8,7 @@ function SignUp() {
             <input label='email' placeholder='email pls' type='email'></input>
             <br/>
             <input label='password' placeholder='choose a password' type='password'></input>
-        </div>
+        </form>
     )
 }
 

@@ -2,9 +2,11 @@ import DisplayListing from "../components/DisplayListing"
 
 function Listing() {
     return(
-        <div style={{border: '1px solid black', borderRadius: '10%'}}>
+        <div>
             <DisplayListing/>
             This is to show other people's listings
+            <br/>
+            This should include sort and filter methods
         </div>
     )
 }

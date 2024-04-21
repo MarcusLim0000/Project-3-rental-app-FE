@@ -1,15 +1,19 @@
-import SignIn from "../components/SignIn"
-import SignUp from "../components/SignUp"
+import { useState } from 'react';
+import SignIn from '../components/SignIn';
+import SignUp from '../components/SignUp';
 
 function AuthPage() {
-    return(
-        <div>
-            AuthPage
-            <SignIn/>
-            <button>OR (the role is to toggle between sign in/up)</button>
-            <SignUp/>
-        </div>
-    )
+  const [choice, setChoice] = useState(false);
+
+  return (
+    <div>
+      AuthPage
+      {choice ? <SignIn /> : <SignUp />}
+      <button onClick={() => setChoice(!choice )}>
+      {choice ? 'Sign Up Instead' : 'Sign In Instead'}
+      </button>
+    </div>
+  );
 }
 
-export default AuthPage
+export default AuthPage;
