@@ -7,7 +7,7 @@ import Listing from './pages/Listing';
 import Navbar from './components/Navbar';
 
 function App() {
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState(null);
   // test the code by changing the useState
 
   return (
