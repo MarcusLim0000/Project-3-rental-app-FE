@@ -5,6 +5,7 @@ import AuthPage from './pages/AuthPage';
 import Profile from './pages/Profile';
 import Listing from './pages/Listing';
 import Navbar from './components/Navbar';
+import CreateListing from './pages/CreateListing';
 
 function App() {
   const [user, setUser] = useState(null);
@@ -17,6 +18,7 @@ function App() {
           <Navbar/>
           <Routes>
             <Route path='/profile' element={<Profile/>} />
+            <Route path='/create-listing' element={<CreateListing/>}/>
             <Route path='/' element={<Listing/>} /> 
           </Routes>
         </Router>
