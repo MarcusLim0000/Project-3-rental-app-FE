@@ -1,3 +1,5 @@
+import './DisplayListing.css'
+
 function DisplayListing() {
     return(
         <div>

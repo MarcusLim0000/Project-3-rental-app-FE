@@ -1,4 +1,4 @@
-import DisplayListing from "../components/DisplayListing"
+import DisplayListing from '../components/DisplayListing/DisplayListing'
 
 function Listing() {
     return(
