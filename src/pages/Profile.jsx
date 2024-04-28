@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import DisplayListing from "../components/DisplayListing"
+import DisplayListing from "../components/DisplayListing/DisplayListing"
 
 function Profile() {
     return(
