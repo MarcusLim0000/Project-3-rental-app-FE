@@ -1,6 +1,7 @@
+import './AuthPage.css';
 import { useState } from 'react';
-import SignIn from '../components/SignIn';
-import SignUp from '../components/SignUp';
+import SignIn from '../../components/SignIn/SignIn';
+import SignUp from '../../components/SignUp/SignUp';
 
 function AuthPage() {
   const [choice, setChoice] = useState(false);

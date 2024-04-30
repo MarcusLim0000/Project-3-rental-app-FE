@@ -1,6 +1,7 @@
+import './SignUp.css';
 import { useState } from "react"
 // import createUser from '../utilities/user-services'
-import { signUp } from "../utilities/users-api"
+import { signUp } from "../../utilities/users-api"
 
 function SignUp() {
     const [state, setState] = useState({
