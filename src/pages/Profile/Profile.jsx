@@ -30,12 +30,16 @@ useEffect(()=>{
 
     return(
         <div>
-            {/* <DisplayListing/> or CRUD to add new listings
-            <br/>
-            should also include a cart option to show what i wanna buy/rent */}
-            <br/>
-            <h1> welcome {userInfo.name}</h1>
-            {userInfo.listedProperty.map((property)=><DisplayListing property={property}/>)}
+            <h1> welcome {user}</h1>
+            {userInfo.listedProperty.map((property)=>{
+                return (<div>
+                <DisplayListing property={property}/>
+                <button>Edit</button>
+                <button>Delete</button>
+                </div>
+                )
+                })}
+                <br/>
             <Link to={'/create-listing'}>CREATE NEW LISTING</Link>
         </div>
     )
