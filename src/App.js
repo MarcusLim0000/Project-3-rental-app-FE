@@ -8,8 +8,14 @@ import Navbar from './components/Navbar/Navbar';
 import CreateListing from './pages/CreateListing/CreateListing';
 
 function App() {
-  const [user, setUser] = useState(1);
+  const [user, setUser] = useState("testUser");
   // test the code by changing the useState
+  //the useState should be a function getUser()
+
+  // function getUser() {
+  //   get token from getToken()
+  //   return user from token
+  // }
 
   return (
     <div className="App">

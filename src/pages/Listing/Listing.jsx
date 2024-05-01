@@ -22,17 +22,25 @@ function Listing() {
 
     useEffect(()=>{
         //function to search the database for available listings
-        //call setLisings
+        //call setLisings()
         },[])
-    return(
-        <div>
-            This is to show other people's listings
-            <br/>
-            This should include sort and filter methods
-            <br/>
-            {listings.map((property)=><DisplayListing property={property}/>)}
-        </div>
-    )
+    return (
+      <div>
+        This is to show other people's listings
+        <br />
+        This should include sort and filter methods
+        <br />
+        {listings.map((property) => {
+          return (
+            <div>
+              <DisplayListing property={property} />
+              <button>Zoom in </button>
+              <p>(^this button is supposed to call another component to show more details about the listing)</p>
+            </div>
+          );
+        })}
+      </div>
+    );
 }
 
 export default Listing
