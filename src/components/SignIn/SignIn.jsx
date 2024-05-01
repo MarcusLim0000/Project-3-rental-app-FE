@@ -1,5 +1,6 @@
 import './SignIn.css';
 import { useState } from "react"
+import axios from 'axios'
 
 function SignIn() {
 const [state, setState] = useState({
@@ -12,17 +13,22 @@ function handleChange(evt) {
   
 }
 
-async function handleSubmit(e){
-    e.preventDefault()
-    console.log(state)
+async function handleSubmit(email, password) {
+    try {
+        const response = await axios.post('http://localhost:3005/api/users/sign-in', {
+            email: email,
+            password: password
+        });
+        // Handle successful sign-in response
+        alert ('WOOOOO!')
+        console.log(response); // This would likely be the JWT token
+    } catch (error) {
+        // Handle sign-in error
+        console.error('Sign-in failed:', error.response.data);
+    }
    
-     //instead of calling the console.log, this function sends the form details to 
-        //utilities, to first check if user exists, if yes, check if password match, if no return error
-        //can consider doing the disableSubmit() function if any fields are empty (if we are bored)
-        //used async function here cos nid to try catch later to interact with backend
-
-    setState({...state, password: ''})
-    //can consider the above function to remove the password, if the password provided was wrong
+    // Clear the password field from the state
+    setState({...state, password: ''});
 }
 
     return(

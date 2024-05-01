@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from 'react';
+import { getUser } from './utilities/users-service';
 import AuthPage from './pages/AuthPage/AuthPage';
 import Profile from './pages/Profile/Profile';
 import Listing from './pages/Listing/Listing';
@@ -8,7 +9,7 @@ import Navbar from './components/Navbar/Navbar';
 import CreateListing from './pages/CreateListing/CreateListing';
 
 function App() {
-  const [user, setUser] = useState("testUser");
+  const [user, setUser] = useState(null);
   // test the code by changing the useState
   //the useState should be a function getUser()
 
