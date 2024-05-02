@@ -8,7 +8,7 @@ import Navbar from './components/Navbar/Navbar';
 import CreateListing from './pages/CreateListing/CreateListing';
 
 function App() {
-  const [user, setUser] = useState("testUser");
+  const [user, setUser] = useState("");
   // test the code by changing the useState
   //the useState should be a function getUser()
 
@@ -16,6 +16,10 @@ function App() {
   //   get token from getToken()
   //   return user from token
   // }
+
+  function getUser(e){
+    setUser(e.email)
+  }
 
   return (
     <div className="App">
@@ -31,7 +35,7 @@ function App() {
       ) : (
         <Router>
           <Routes>
-            <Route path='/*' element={<AuthPage/>} />
+            <Route path='/*' element={<AuthPage getUser={getUser}/>} />
           </Routes>
         </Router>
       )}
