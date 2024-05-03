@@ -3,12 +3,14 @@ import { useState } from "react"
 // import createUser from '../utilities/user-services'
 import { signUp } from "../../utilities/users-api"
 
-function SignUp() {
+function SignUp(props) {
     const [state, setState] = useState({
         name: '',
         email: '',
         password: '',
     })
+
+    const {getUser} = props
     
     function handleChange(evt) {
         setState({...state, [evt.target.name]: evt.target.value})
@@ -16,16 +18,15 @@ function SignUp() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-        //instead of calling the console.log, this function sends the form details to 
-        //utilities, to first check if user exists, if yes, return error, if no create new user
-        //can consider doing the disableSubmit() function if any fields are empty (if we are bored)
-        //added async here becos we nid to add try catch block to interact with backend later
-        try {
-            await signUp(state);
-        } catch (error) {
-            console.log(error)
-            alert("An error occurred. Too bad.");
-        }
+     
+        // try {
+        //     await signUp(state);
+        // } catch (error) {
+        //     console.log(error)
+        //     alert("An error occurred. Too bad.");
+        // }
+
+        getUser(state)
     }
 
     return(

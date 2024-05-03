@@ -1,11 +1,12 @@
 import './SignIn.css';
 import { useState } from "react"
 
-function SignIn() {
+function SignIn(props) {
 const [state, setState] = useState({
     email: '',
     password: '',
 })
+const {getUser} = props
 
 function handleChange(evt) {
     setState({...state, [evt.target.name]: evt.target.value})
@@ -15,7 +16,7 @@ function handleChange(evt) {
 async function handleSubmit(e){
     e.preventDefault()
     console.log(state)
-   
+   getUser(state)
      //instead of calling the console.log, this function sends the form details to 
         //utilities, to first check if user exists, if yes, check if password match, if no return error
         //can consider doing the disableSubmit() function if any fields are empty (if we are bored)
