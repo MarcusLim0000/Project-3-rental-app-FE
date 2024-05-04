@@ -24,7 +24,7 @@ function App() {
     <div className="App">
       {user ? (
         <Router>
-          <Navbar/>
+          <Navbar user={user} setUser={setUser}/>
           <Routes>
             <Route path='/profile' element={<Profile user={user}/>} />
             <Route path='/create-listing' element={<CreateListing/>}/>
