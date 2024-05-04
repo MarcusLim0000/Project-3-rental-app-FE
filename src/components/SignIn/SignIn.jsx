@@ -1,6 +1,5 @@
 import "./SignIn.css";
 import React, { useState } from "react";
-import { login } from "../../utilities/users-api";
 import * as usersService from '../../utilities/users-service';
 
 function SignIn({ setUser }) { // Receive setUser as a prop
