@@ -11,6 +11,7 @@ export async function signUp(userData) {
   // module.
   const token = await usersAPI.signUp(userData);
   localStorage.setItem('token', token);
+  console.log('token', token);
   return getUser();
 }
 
@@ -57,5 +58,6 @@ export async function login(credentials) {
   // module.
   const token = await usersAPI.login(credentials);
   localStorage.setItem('token', token);
+  console.log('token', token);
   return getUser();
 }
