@@ -16,7 +16,9 @@ function SignUp() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-
+        try {
+            await signUp(state);
+            alert("sign up successful")
         } catch (error) {
             console.log(error)
             alert("An error occurred. Too bad.");
