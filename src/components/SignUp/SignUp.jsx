@@ -1,4 +1,3 @@
-import './SignUp.css';
 import { useState } from "react"
 // import createUser from '../utilities/user-services'
 import { signUp } from "../../utilities/users-api"
@@ -10,7 +9,6 @@ function SignUp() {
         password: '',
     })
 
-   
     
     function handleChange(evt) {
         setState({...state, [evt.target.name]: evt.target.value})
@@ -18,15 +16,11 @@ function SignUp() {
 
     async function handleSubmit(e) {
         e.preventDefault()
-     
-        try {
-            await signUp(state);
+
         } catch (error) {
             console.log(error)
             alert("An error occurred. Too bad.");
         }
-
-       
     }
 
     return(
