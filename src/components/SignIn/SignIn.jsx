@@ -1,41 +1,59 @@
-import './SignIn.css';
-import { useState } from "react"
+import "./SignIn.css";
+import React, { useState } from "react";
+import { login } from "../../utilities/users-api";
+import * as usersService from '../../utilities/users-service';
 
-function SignIn(props) {
-const [state, setState] = useState({
-    email: '',
-    password: '',
-})
-const {getUser} = props
+function SignIn({ setUser }) { // Receive setUser as a prop
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+  const [error, setError] = useState('');
 
-function handleChange(evt) {
-    setState({...state, [evt.target.name]: evt.target.value})
-  
+  function handleChange(evt) {
+    setState({ ...state, [evt.target.name]: evt.target.value, error: "" });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    try {
+        // The promise returned by the signUp service method 
+        // will resolve to the user object included in the
+        // payload of the JSON Web Token (JWT)
+        const user = await usersService.login(state);
+        setUser(user);
+      } catch {
+        setError('Log In Failed - Try Again');
+      }
+    }
+
+
+
+  return (
+    <div className="form-container">
+    <form onSubmit={handleSubmit}>
+      <label>Email</label>
+      <input
+        name="email"
+        placeholder="Email"
+        value={state.email}
+        type="email"
+        onChange={handleChange}
+      />
+      <label>Password</label>
+      <input
+        name="password"
+        placeholder="Password"
+        value={state.password}
+        type="password"
+        onChange={handleChange}
+      />
+      <p className="error-message">&nbsp;{error}</p>
+      <button type="submit">LOG IN</button>
+    </form>
+    </div>
+  );
 }
 
-async function handleSubmit(e){
-    e.preventDefault()
-    console.log(state)
-   getUser(state)
-     //instead of calling the console.log, this function sends the form details to 
-        //utilities, to first check if user exists, if yes, check if password match, if no return error
-        //can consider doing the disableSubmit() function if any fields are empty (if we are bored)
-        //used async function here cos nid to try catch later to interact with backend
-
-    setState({...state, password: ''})
-    //can consider the above function to remove the password, if the password provided was wrong
-}
-
-    return(
-        <form onSubmit={handleSubmit}>
-            SignIn
-            <br/>
-            <input name='email' placeholder='email' value={state.email} type='email' onChange={handleChange} />
-            <br/>
-            <input name='password' placeholder='password' value={state.password} type='password' onChange={handleChange}></input>
-            <button type='submit'>LOG IN</button>
-        </form>
-    )
-}
-
-export default SignIn
+export default SignIn;

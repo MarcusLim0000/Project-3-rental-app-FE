@@ -1,15 +1,21 @@
-async function sendRequest(url, method='GET', payload) {
+import { getToken } from './users-service';
 
-    const options = {method}
-    if(payload) { 
-        //i have no idea what the header is for, can only test when server is ready
-        options.headers = { 'Content-Type': 'application/json'}
-        options.body = JSON.stringify(payload)
-    }
-    // didnt code the get token yet since focusing on user log in/sign up first
-    const res = await fetch(url, options)
-    if (res.ok) return res.json()
-    throw new Error('Bad Request')
+export default async function sendRequest(url, method = 'GET', payload = null) {
+  // Fetch accepts an options object as the 2nd argument
+  // used to include a data payload, set headers, etc. 
+  const options = { method };
+  if (payload) {
+    options.headers = { 'Content-Type': 'application/json' };
+    options.body = JSON.stringify(payload);
+  }
+  const token = getToken();
+  if (token) {
+    // Ensure that headers object exists
+    options.headers = options.headers || {};
+    options.headers.Authorization = `Bearer ${token}`;
+  }
+  const res = await fetch(url, options);
+  // res.ok will be false if the status code set to 4xx in the controller action
+  if (res.ok) return res.json();
+  throw new Error('Bad Request');
 }
-
-export default sendRequest
