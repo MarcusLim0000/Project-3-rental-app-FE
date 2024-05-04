@@ -3,13 +3,12 @@ import { useState } from 'react';
 import SignIn from '../../components/SignIn/SignIn';
 import SignUp from '../../components/SignUp/SignUp';
 
-function AuthPage(props) {
+function AuthPage({setUser}) {
   const [choice, setChoice] = useState(false);
-  const {getUser} = props
   return (
     <div>
       AuthPage
-      {choice ? <SignIn getUser={getUser} /> : <SignUp getUser={getUser}/>}
+      {choice ? <SignIn setUser={setUser} /> : <SignUp setUser={setUser}/>}
       <button onClick={() => setChoice(!choice )}>
       {choice ? 'Sign Up Instead' : 'Sign In Instead'}
       </button>

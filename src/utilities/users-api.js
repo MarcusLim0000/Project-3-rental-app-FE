@@ -10,5 +10,5 @@ export function signUp(userInput) {
 
 export function login(userInput) {
     //search route to access user database (find method)
-    return sendRequest(`${BASE_URL}/login`, 'POST', userInput)
+    return sendRequest(`${BASE_URL}/sign-in`, 'POST', userInput)
 }

@@ -6,9 +6,10 @@ import Profile from './pages/Profile/Profile';
 import Listing from './pages/Listing/Listing';
 import Navbar from './components/Navbar/Navbar';
 import CreateListing from './pages/CreateListing/CreateListing';
+import { getUser } from './utilities/users-service';
 
 function App() {
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState(getUser());
   // test the code by changing the useState
   //the useState should be a function getUser()
 
@@ -17,9 +18,7 @@ function App() {
   //   return user from token
   // }
 
-  function getUser(e){
-    setUser(e.email)
-  }
+
 
   return (
     <div className="App">
@@ -35,7 +34,7 @@ function App() {
       ) : (
         <Router>
           <Routes>
-            <Route path='/*' element={<AuthPage getUser={getUser}/>} />
+            <Route path='/*' element={<AuthPage setUser={setUser}/>} />
           </Routes>
         </Router>
       )}
