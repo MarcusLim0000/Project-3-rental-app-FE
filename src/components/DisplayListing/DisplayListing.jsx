@@ -1,6 +1,5 @@
 import "./DisplayListing.css";
 import { useEffect, useState } from "react";
-import axios from "axios"; //multer testing Marcus 5/5
 
 // code for function to retrieve all data from back end, will use Listing in pages to do the search and filtering
 // component to display more details
@@ -29,24 +28,9 @@ function DisplayListing() {
     fetchListings();
   }, []);
 
-  //Multer testing Marcus 5/5
-  const [file, setFile] = useState();
-
-  async function handleUpload() {
-    const formData = new FormData();
-    formData.append("file", file);
-
-    const response = await axios.post("http://localhost:3005/upload", formData);
-    alert("Greato Success! @_@");
-  }
-  // test ends here
   return (
     <div>
       <h1>Listings</h1>
-      {/* Multer testing marcus 5/5 */}
-      <input type="file" onChange={(e) => setFile(e.target.files[0])}></input>
-      <button onClick={handleUpload}>Upload</button>
-      {/* test ends here */}
       {listings.map((listing) => (
         <div key={listing._id} className="listing-item">
           <h2>{listing.title}</h2>
