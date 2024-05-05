@@ -6,13 +6,15 @@ import SignUp from '../../components/SignUp/SignUp';
 function AuthPage({setUser}) {
   const [choice, setChoice] = useState(false);
   return (
+    <main className="AuthPage">
     <div>
-      AuthPage
       {choice ? <SignIn setUser={setUser} /> : <SignUp setUser={setUser}/>}
+      
       <button onClick={() => setChoice(!choice )}>
       {choice ? 'Sign Up Instead' : 'Sign In Instead'}
       </button>
-    </div>
+      </div>
+      </main>
   );
 }
 
