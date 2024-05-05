@@ -8,44 +8,24 @@ import { useEffect, useState } from "react";
 // console.log(props)
 //the actual code should call and display property.name
 
-function DisplayListing() {
-  const [listings, setListings] = useState([]);
-
-  useEffect(() => {
-    const fetchListings = async () => {
-      try {
-        const response = await fetch("http://localhost:3005/api/listing/get");
-        if (!response.ok) {
-          throw new Error("Failed to fetch listings");
-        }
-        const data = await response.json();
-        setListings(data);
-      } catch (error) {
-        console.error("Error fetching listings:", error);
-      }
-    };
-
-    fetchListings();
-  }, []);
+function DisplayListing(props) {
+const {property} = props
 
   return (
     <div>
-      <h1>Listings</h1>
-      {listings.map((listing) => (
-        <div key={listing._id} className="listing-item">
-          <h2>{listing.title}</h2>
-          <p>Description: {listing.description}</p>
-          <p>Price: ${listing.price}</p>
-          <p>Location: {listing.location}</p>
-          {/* Assuming imageUrls is an array of image URLs for now */}
-          <div className="image-container">
-            {listing.imageUrls.map((url, index) => (
+      <h1>{property.name}</h1>
+      <h2>{property.title}</h2>
+      <p>Description: {property.description}</p>
+      <p>Price: ${property.price}</p>
+      <p>Location: {property.location}</p>
+      {/* Assuming imageUrls is an array of image URLs for now */}
+      {/* <div className="image-container">
+      {listing.imageUrls.map((url, index) => (
               <img key={index} src={url} alt={`Image ${index}`} />
             ))}
-          </div>
+          </div> */}
         </div>
-      ))}
-    </div>
+ 
   );
 }
 

@@ -7,12 +7,24 @@ function Profile(props) {
 const {user} = props
 console.log(user) // test if i can retrieve user from App.js 
 
-const [userInfo, setUserInfo] = useState({
-    name: 'testUser',
-    email: 'test@email.com',
-    password: 123,
-    listedProperty: [{objId:'obj1'},{objId:'obj2'}]
-}) //just an example
+const [userProperty, setUserProperty] = useState([
+    {
+        objId: 'obj1',
+        name: 'testCondo',
+        title: 'for Rent',
+        description: 'cheap condo',
+        price: 1,
+        location: 'tanjong pagar',
+    },
+    {objId:'obj2',
+    name: 'testLanded',
+        title: 'for BnB',
+        description: 'luxury landed',
+        price: 1000,
+        location: 'sentosa cove',
+    }]
+
+) //just an example
 //upon getting the objId, query the database to search for the listing objects
 
 //const userArray?
@@ -30,8 +42,8 @@ useEffect(()=>{
 
     return(
         <div>
-            <h1> welcome {user}</h1>
-            {userInfo.listedProperty.map((property)=>{
+            <h1> welcome {user.name}</h1>
+            {userProperty.map((property)=>{
                 return (<div>
                 <DisplayListing property={property}/>
                 <button>Edit</button>
