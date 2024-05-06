@@ -1,6 +1,7 @@
 import "./CreateListing.css";
 import { useState } from "react";
 import axios from "axios"; //multer testing Marcus 5/5
+import { createListing } from "../../utilities/users-api";
 
 function CreateListing() {
   const [newListing, setNewListing] = useState({
@@ -24,6 +25,12 @@ function CreateListing() {
     evt.preventDefault();
     //for now will only log the form
     console.log(newListing);
+    try {
+      createListing(newListing)
+    }
+    catch (error) {
+      console.log(error)
+    }
   }
 
   //Multer testing Marcus 5/5
@@ -108,6 +115,7 @@ function CreateListing() {
           ></input>
           <button onClick={handleUpload}>Upload</button>
           {/* test ends here */}
+          <button type='submit'>Submit</button>
         </div>
       </form>
     </div>
