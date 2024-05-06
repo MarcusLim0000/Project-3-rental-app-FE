@@ -12,12 +12,13 @@ function Listing() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const response = await fetch("http://localhost:3005/api/listing/get");
+        const response = await fetch("http://localhost:3005/api/listing/");
         if (!response.ok) {
           throw new Error("Failed to fetch listings");
         }
         const data = await response.json();
         setProperty(data);
+        console.log(data);
       } catch (error) {
         console.error("Error fetching listings:", error);
       }
@@ -29,14 +30,13 @@ function Listing() {
   return (
     <div>
       <h1>Listings</h1>
-      <br />
-      This should include sort and filter methods
+     
       <br />
 
     {property.map((property) => { 
       return(<div>
          <DisplayListing property={property}/>
-         <button>Zoom In</button>
+         
       </div>)
    })}
     </div>
