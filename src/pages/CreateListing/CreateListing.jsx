@@ -25,14 +25,23 @@ function CreateListing() {
     evt.preventDefault();
     //for now will only log the form
     try {
-      createListing(newListing)
-    }
-    catch (error) {
-      console.log(error)
+      createListing(newListing);
+      alert('Listing created!')
+      setNewListing({
+        title: "",
+        size: "",
+        description: "",
+        price: "",
+        location: "",
+        bedrooms: "",
+        bathrooms: "",
+        images: [],
+      })
+    } catch (error) {
+      console.log(error);
     }
   }
 
-  //Multer testing Marcus 5/5
   const [file, setFile] = useState();
 
   async function handleUpload() {
@@ -40,18 +49,21 @@ function CreateListing() {
     formData.append("image", file);
 
     try {
-      const response = await axios.post("http://localhost:3005/api/upload/image", formData);
+      const response = await axios.post(
+        "http://localhost:3005/api/upload/image",
+        formData
+      );
       const imageUrl = response.data;
-      console.log(imageUrl)
-      setNewListing({ ...newListing, images: Array.from(imageUrl) });
-      alert('Listing uploaded!!!');
+      console.log(imageUrl);
+      setNewListing({
+        ...newListing,
+        images: [...newListing.images, imageUrl],
+      });
+      alert("Listing uploaded!!!");
     } catch (error) {
-      console.error('Error uploading!! TWT', error);
+      console.error("Error uploading!! TWT", error);
     }
-    
-    //const response = await axios.post("http://localhost:3005/api/upload/image", formData);
   }
-  // test ends here
 
   return (
     <div>
@@ -61,6 +73,7 @@ function CreateListing() {
           placeholder="title"
           name="title"
           type="text"
+          value={newListing.title}
           onChange={handleChange}
         ></input>
         <br />
@@ -68,6 +81,7 @@ function CreateListing() {
           placeholder="size"
           name="size"
           type="number"
+          value={newListing.size}
           onChange={handleChange}
         ></input>
         <br />
@@ -75,6 +89,7 @@ function CreateListing() {
           placeholder="description"
           name="description"
           type="text"
+          value={newListing.description}
           onChange={handleChange}
         ></input>
         <br />
@@ -82,6 +97,7 @@ function CreateListing() {
           placeholder="rental per month"
           name="price"
           type="number"
+          value={newListing.price}
           onChange={handleChange}
         ></input>
         <br />
@@ -89,11 +105,12 @@ function CreateListing() {
           placeholder="location"
           name="location"
           type="String"
+          value={newListing.location}
           onChange={handleChange}
         ></input>
         <br />
         <label>Bedrooms: </label>
-        <select name="bedrooms" onChange={handleChange}>
+        <select name="bedrooms" onChange={handleChange} value={newListing.bedrooms}>
           <option value={0}>0</option>
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -102,7 +119,7 @@ function CreateListing() {
           <option value={5}>5</option>
         </select>
         <label>Bathrooms: </label>
-        <select name="bathrooms" onChange={handleChange}>
+        <select name="bathrooms" onChange={handleChange} value={newListing.bathrooms}>
           <option value={0}>0</option>
           <option value={1}>1</option>
           <option value={2}>2</option>
@@ -113,17 +130,19 @@ function CreateListing() {
         <br />
         <div>
           {" "}
-          {/* this div is for images */}
           <span>Images: </span>
           <br />
-          {/* Multer testing marcus 5/5 */}
           <input
             type="file"
+            value={newListing.images}
             onChange={(e) => setFile(e.target.files[0])}
           ></input>
-          <button onClick={handleUpload}>Upload</button>
-          {/* test ends here */}
-          <button type='submit'>Submit</button>
+          <button key="upload" type="button" onClick={handleUpload}>
+            Upload
+          </button>
+          <button key="submit" type="submit">
+            Submit
+          </button>
         </div>
       </form>
     </div>

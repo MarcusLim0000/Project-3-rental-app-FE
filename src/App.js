@@ -1,40 +1,34 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { useState } from 'react';
-import AuthPage from './pages/AuthPage/AuthPage';
-import Profile from './pages/Profile/Profile';
-import Listing from './pages/Listing/Listing';
-import Navbar from './components/Navbar/Navbar';
-import CreateListing from './pages/CreateListing/CreateListing';
-import { getUser } from './utilities/users-service';
+import { useState } from "react";
+import AuthPage from "./pages/AuthPage/AuthPage";
+import Profile from "./pages/Profile/Profile";
+import Listing from "./pages/Listing/Listing";
+import Navbar from "./components/Navbar/Navbar";
+import CreateListing from "./pages/CreateListing/CreateListing";
+import { getUser } from "./utilities/users-service";
+import AboutUs from "./pages/AboutUs/AboutUs";
 
 function App() {
   const [user, setUser] = useState(getUser());
-  // test the code by changing the useState
-  //the useState should be a function getUser()
-
-  // function getUser() {
-  //   get token from getToken()
-  //   return user from token
-  // }
-
 
 
   return (
     <div className="App">
       {user ? (
         <Router>
-          <Navbar user={user} setUser={setUser}/>
+          <Navbar user={user} setUser={setUser} />
           <Routes>
-            <Route path='/profile' element={<Profile user={user}/>} />
-            <Route path='/create-listing' element={<CreateListing/>}/>
-            <Route path='/' element={<Listing/>} /> 
+            <Route path="/about-us" element={<AboutUs />} />
+            <Route path="/profile" element={<Profile user={user} />} />
+            <Route path="/create-listing" element={<CreateListing />} />
+            <Route path="/" element={<Listing />} />
           </Routes>
         </Router>
       ) : (
         <Router>
           <Routes>
-            <Route path='/*' element={<AuthPage setUser={setUser}/>} />
+            <Route path="/*" element={<AuthPage setUser={setUser} />} />
           </Routes>
         </Router>
       )}
