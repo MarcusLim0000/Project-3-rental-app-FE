@@ -12,7 +12,11 @@ export function login(userInput) {
     //search route to access user database (find method)
     return sendRequest(`${BASE_URL}/sign-in`, 'POST', userInput)
 }
-const LISTING_URL = 'http://localhost:3005/api/listing/create'
+const LISTING_URL = 'http://localhost:3005/api/listing'
 export function createListing(userInput) {
-    return sendRequest(LISTING_URL, 'POST', userInput)
+    return sendRequest(`${LISTING_URL}/create`, 'POST', userInput)
+}
+
+export function deleteListing(id) {
+    return sendRequest(`${LISTING_URL}/delete/${id}`,'DELETE')
 }
