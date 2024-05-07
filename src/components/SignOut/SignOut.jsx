@@ -1,4 +1,5 @@
 import './SignOut.css';
+import { Link } from 'react-router-dom'
 import { logOut } from '../../utilities/users-service';
 
 export default function SignOut({ user, setUser }) {
@@ -8,8 +9,10 @@ export default function SignOut({ user, setUser }) {
   }
 
   return (
-    <div className="UserSignOut">
-      <button className="btn-sm" onClick={handleSignOut}>Sign Out</button>
+    <div>
+    <Link to="/" onClick={handleSignOut}>
+    Sign Out
+  </Link>
     </div>
   );
 }
