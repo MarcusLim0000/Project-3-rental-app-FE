@@ -77,7 +77,7 @@ function Profile(props) {
 
     return (
         <div>
-            <h1>Welcome {user.name}</h1>
+            <h1 className ="user-title">Welcome, {user.name}</h1>
             {userProperty.map((property) => (
                 <div key={property.objId}>
                     <DisplayListing property={property} />
