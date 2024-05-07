@@ -18,7 +18,6 @@ function Listing() {
         }
         const data = await response.json();
         setProperty(data);
-        console.log(data);
       } catch (error) {
         console.error("Error fetching listings:", error);
       }
