@@ -12,18 +12,19 @@ function DisplayListing(props) {
 const {property} = props
 
   return (
-    <div>
-      <h1>{property.name}</h1>
-      <h2>{property.title}</h2>
-      <p>Description: {property.description}</p>
-      <p>Price: ${property.price}</p>
-      <p>Location: {property.location}</p>
+    <div className="listings-container">
+    <div className="listing-item">
+      <p className="listing-title">{property.title}</p>
+      <p className="listing-description">Description: {property.description}</p>
+      <p className="listing-price">Price: ${property.price}</p>
+      <p className="listing-location">Location: {property.location}</p>
       {/* Assuming imageUrls is an array of image URLs for now */}
       {/* <div className="image-container">
       {listing.imageUrls.map((url, index) => (
               <img key={index} src={url} alt={`Image ${index}`} />
             ))}
           </div> */}
+          </div>
         </div>
  
   );

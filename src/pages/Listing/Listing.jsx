@@ -28,13 +28,13 @@ function Listing() {
   }, []);
 
   return (
-    <div>
-      <h1>Listings</h1>
+    <div className="listing-container">
+      <h1 className="listing-header">Listings</h1>
      
       <br />
 
     {property.map((property) => { 
-      return(<div>
+      return(<div className="listing-description">
          <DisplayListing property={property}/>
          
       </div>)
