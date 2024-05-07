@@ -1,0 +1,31 @@
+.team-member {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    width: inherit;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+  }
+  
+  .team-member:focus {
+    box-shadow: 0 0 10px 2px #007bff;
+  }
+  
+  .name {
+    margin: 0;
+    font-size: 1.5em;
+    color: purple
+  }
+  
+  .title {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+  }
+  
+  .description {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+  }

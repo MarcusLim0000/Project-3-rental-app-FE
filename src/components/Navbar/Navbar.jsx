@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom'
 function Navbar({user, setUser}) {
     return(
         <nav className="navbar">
+          <div className="navbar-item">
+          <Link to='/about-us'>About us</Link>
+        </div>
         <div className="navbar-item">
           <Link to='/'>Listings</Link>
         </div>
