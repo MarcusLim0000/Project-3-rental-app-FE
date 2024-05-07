@@ -24,7 +24,6 @@ function CreateListing() {
   async function handleSubmit(evt) {
     evt.preventDefault();
     //for now will only log the form
-    console.log(newListing);
     try {
       createListing(newListing)
     }
@@ -38,10 +37,19 @@ function CreateListing() {
 
   async function handleUpload() {
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("image", file);
 
-    const response = await axios.post("http://localhost:3005/upload", formData);
-    alert("Greato Success! @_@");
+    try {
+      const response = await axios.post("http://localhost:3005/api/upload/image", formData);
+      const imageUrl = response.data;
+      console.log(imageUrl)
+      setNewListing({ ...newListing, images: Array.from(imageUrl) });
+      alert('Listing uploaded!!!');
+    } catch (error) {
+      console.error('Error uploading!! TWT', error);
+    }
+    
+    //const response = await axios.post("http://localhost:3005/api/upload/image", formData);
   }
   // test ends here
 

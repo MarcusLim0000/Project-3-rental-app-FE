@@ -6,7 +6,6 @@ import { deleteListing } from '../../utilities/users-api';
 
 function Profile(props) {
     const { user } = props;
-    console.log(user); // test if I can retrieve user from App.js 
 
     const [userProperty, setUserProperty] = useState([]);
     const token = localStorage.getItem('token');
@@ -32,7 +31,6 @@ function Profile(props) {
                 }
 
                 const data = await response.json();
-                console.log(data)
                 setUserProperty(data);
             } catch (error) {
                 console.error("Error fetching listings:", error);
@@ -82,7 +80,6 @@ function Profile(props) {
                 <div key={property.objId}>
                     <DisplayListing property={property} />
                     <button onClick={()=>{
-                        console.log(property._id)
                         handleDelete(property._id)
                         }}>Delete</button>
                 </div>
