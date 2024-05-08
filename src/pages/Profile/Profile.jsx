@@ -14,7 +14,7 @@ function Profile(props) {
             try {
                
                 if (!token) {
-                    // Handle unauthenticated state (redirect to login, show error message, etc.)
+                    alert('Unauthorised user! Someone call 911!');
                     return;
                 }
 
@@ -38,14 +38,14 @@ function Profile(props) {
         };
 
         fetchUserProperties();
-    }, [user]); // Include user in the dependency array to re-fetch properties when user changes
+    }, [user]);
     async function handleDelete(id) {
         try {
           await deleteListing(id);
           const fetchUserProperties = async () => {
             try {
               if (!token) {
-                // Handle unauthenticated state (redirect to login, show error message, etc.)
+                alert('Unauthorised user! Someone call 911!');
                 return;
               }
       

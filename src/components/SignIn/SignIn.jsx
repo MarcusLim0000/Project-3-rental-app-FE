@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import * as usersService from "../../utilities/users-service";
 
 function SignIn({ setUser }) {
-  // Receive setUser as a prop
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -18,9 +17,6 @@ function SignIn({ setUser }) {
     e.preventDefault();
 
     try {
-      // The promise returned by the signUp service method
-      // will resolve to the user object included in the
-      // payload of the JSON Web Token (JWT)
       const user = await usersService.login(state);
       setUser(user);
     } catch {

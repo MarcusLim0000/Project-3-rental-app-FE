@@ -2,8 +2,6 @@ import "./Listing.css";
 import DisplayListing from "../../components/DisplayListing/DisplayListing";
 import { useEffect, useState } from "react";
 
-// To consider adding filtering/ search function within this page.
-
 function Listing() {
   const [property, setProperty] = useState([
     

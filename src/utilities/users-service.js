@@ -1,14 +1,6 @@
-// Serice modules hold the code that implements
-// "business"/application logic
-// Service methods often depend upon or use
-// methods in the API modules
-
-// Import all named exports
 import * as usersAPI from './users-api';
 
 export async function signUp(userData) {
-  // Delegate the AJAX request to the users-api.js
-  // module.
   const token = await usersAPI.signUp(userData);
   localStorage.setItem('token', token);
   return getUser();
@@ -56,16 +48,10 @@ export function logOut() {
 }
 
 export async function login(credentials) {
-  // Delegate the AJAX request to the users-api.js
-  // module.
   const token = await usersAPI.login(credentials);
   localStorage.setItem('token', token);
 
-
-
-  // Getting token that was just set from local storage
   const tokenFromLs = localStorage.getItem('token');
-  // Checking token validity
   if (!tokenFromLs || !isValidToken(tokenFromLs)){
     return null;
   } 
@@ -74,7 +60,6 @@ export async function login(credentials) {
     localStorage.removeItem('token');
     return null;
   }
-  // extract token from user
   if (tokenFromLs==null){
     return null
   }
