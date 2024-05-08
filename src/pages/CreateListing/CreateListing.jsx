@@ -37,6 +37,9 @@ function CreateListing() {
         bathrooms: "",
         images: [],
       })
+      setFile(null); 
+      document.getElementById('fileInput').value = '';
+
     } catch (error) {
       console.log(error);
     }
@@ -134,7 +137,7 @@ function CreateListing() {
           <br />
           <input
             type="file"
-            value={newListing.images}
+            id='fileInput'
             onChange={(e) => setFile(e.target.files[0])}
           ></input>
           <button key="upload" type="button" onClick={handleUpload}>
