@@ -10,7 +10,7 @@ function Listing() {
   useEffect(() => {
     const fetchListings = async () => {
       try {
-        const response = await fetch("http://localhost:3005/api/listing/");
+        const response = await fetch("https://project-3-rental-app-be.onrender.com/api/listing/");
         if (!response.ok) {
           throw new Error("Failed to fetch listings");
         }

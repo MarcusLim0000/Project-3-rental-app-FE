@@ -1,7 +1,6 @@
 import "./CreateListing.css";
 import { useState } from "react";
-import axios from "axios";
-import { createListing } from "../../utilities/users-api";
+import { createListing, imageUpload } from "../../utilities/users-api";
 
 function CreateListing() {
   const [newListing, setNewListing] = useState({
@@ -51,12 +50,8 @@ function CreateListing() {
     formData.append("image", file);
 
     try {
-      const response = await axios.post(
-        "http://localhost:3005/api/upload/image",
-        formData
-      );
+      const response = await imageUpload(formData);
       const imageUrl = response.data;
-      console.log(imageUrl);
       setNewListing({
         ...newListing,
         images: [...newListing.images, imageUrl],
@@ -80,7 +75,7 @@ function CreateListing() {
         ></input>
         <br />
         <input
-          placeholder="size"
+          placeholder="size in sqm"
           name="size"
           type="number"
           value={newListing.size}
@@ -96,7 +91,7 @@ function CreateListing() {
         ></input>
         <br />
         <input
-          placeholder="rental per month"
+          placeholder="rental per month in USD"
           name="price"
           type="number"
           value={newListing.price}

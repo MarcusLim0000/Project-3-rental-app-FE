@@ -1,19 +1,28 @@
 import sendRequest from "./send-request";
+import axios from "axios";
 
-const BASE_URL = 'http://localhost:3005/api/users'
+const BASE_URL = 'https://project-3-rental-app-be.onrender.com'
 
 export function signUp(userInput) {
-    return sendRequest(BASE_URL, 'POST', userInput)
+    return sendRequest(`${BASE_URL}/api/users`, 'POST', userInput)
 }
 
 export function login(userInput) {
-    return sendRequest(`${BASE_URL}/sign-in`, 'POST', userInput)
+    return sendRequest(`${BASE_URL}/api/users/sign-in`, 'POST', userInput)
 }
-const LISTING_URL = 'http://localhost:3005/api/listing'
+
 export function createListing(userInput) {
-    return sendRequest(`${LISTING_URL}/create`, 'POST', userInput)
+    return sendRequest(`${BASE_URL}/api/listing/create`, 'POST', userInput)
 }
 
 export function deleteListing(id) {
-    return sendRequest(`${LISTING_URL}/delete/${id}`,'DELETE')
+    return sendRequest(`${BASE_URL}/api/listing/delete/${id}`,'DELETE')
+}
+
+export async function imageUpload(formData){
+    const response = await axios.post(
+        `${BASE_URL}/api/upload/image`,
+        formData
+      )
+      return response;
 }

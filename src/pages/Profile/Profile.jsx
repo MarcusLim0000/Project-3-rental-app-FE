@@ -20,7 +20,7 @@ function Profile(props) {
 
                 const userId = user._id; 
 
-                const response = await fetch(`http://localhost:3005/api/listing/${userId}`, {
+                const response = await fetch(`https://project-3-rental-app-be.onrender.com/api/listing/${userId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -51,7 +51,7 @@ function Profile(props) {
       
               const userId = user._id; 
       
-              const response = await fetch(`http://localhost:3005/api/listing/${userId}`, {
+              const response = await fetch(`https://project-3-rental-app-be.onrender.com/api/listing/${userId}`, {
                 headers: {
                   Authorization: `Bearer ${token}`
                 }
