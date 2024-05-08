@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar/Navbar";
 import CreateListing from "./pages/CreateListing/CreateListing";
 import { getUser } from "./utilities/users-service";
 import AboutUs from "./pages/AboutUs/AboutUs";
+import EditListing from "./pages/EditListing/EditListing";
 
 function App() {
   const [user, setUser] = useState(getUser());
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/profile" element={<Profile user={user} />} />
             <Route path="/create-listing" element={<CreateListing />} />
+            <Route path="/edit-listing/:id" element={<EditListing/>}/>
             <Route path="/" element={<Listing />} />
           </Routes>
         </Router>

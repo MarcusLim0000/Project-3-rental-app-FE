@@ -66,6 +66,8 @@ function CreateListing() {
     <div>
       <h1>Create Listing</h1>
       <form onSubmit={handleSubmit}>
+        <label>
+          Title:
         <input
           placeholder="title"
           name="title"
@@ -73,7 +75,9 @@ function CreateListing() {
           value={newListing.title}
           onChange={handleChange}
         ></input>
-        <br />
+        </label>
+        <label>
+          Size:
         <input
           placeholder="size in sqm"
           name="size"
@@ -81,7 +85,9 @@ function CreateListing() {
           value={newListing.size}
           onChange={handleChange}
         ></input>
-        <br />
+        </label>
+        <label>
+          Description:
         <input
           placeholder="description"
           name="description"
@@ -89,7 +95,9 @@ function CreateListing() {
           value={newListing.description}
           onChange={handleChange}
         ></input>
-        <br />
+        </label>
+        <label>
+          Rental:
         <input
           placeholder="rental per month in USD"
           name="price"
@@ -97,7 +105,9 @@ function CreateListing() {
           value={newListing.price}
           onChange={handleChange}
         ></input>
-        <br />
+        </label>
+        <label>
+          Location:
         <input
           placeholder="location"
           name="location"
@@ -105,8 +115,10 @@ function CreateListing() {
           value={newListing.location}
           onChange={handleChange}
         ></input>
-        <br />
-        <label>Bedrooms: </label>
+        </label>
+        <br/>
+        <label>
+          Bedrooms: 
         <select name="bedrooms" onChange={handleChange} value={newListing.bedrooms}>
           <option value={0}>0</option>
           <option value={1}>1</option>
@@ -115,7 +127,8 @@ function CreateListing() {
           <option value={4}>4</option>
           <option value={5}>5</option>
         </select>
-        <label>Bathrooms: </label>
+        </label>
+        <label>Bathrooms: 
         <select name="bathrooms" onChange={handleChange} value={newListing.bathrooms}>
           <option value={0}>0</option>
           <option value={1}>1</option>
@@ -124,7 +137,7 @@ function CreateListing() {
           <option value={4}>4</option>
           <option value={5}>5</option>
         </select>
-        <br />
+        </label>
         <div>
           {" "}
           <span>Images: </span>
