@@ -1,6 +1,6 @@
 import "./CreateListing.css";
 import { useState } from "react";
-import axios from "axios"; //multer testing Marcus 5/5
+import axios from "axios";
 import { createListing } from "../../utilities/users-api";
 
 function CreateListing() {
@@ -23,7 +23,6 @@ function CreateListing() {
   }
   async function handleSubmit(evt) {
     evt.preventDefault();
-    //for now will only log the form
     try {
       createListing(newListing);
       alert('Listing created!')
@@ -62,9 +61,9 @@ function CreateListing() {
         ...newListing,
         images: [...newListing.images, imageUrl],
       });
-      alert("Listing uploaded!!!");
+      alert("Image attached. Please submit your form!");
     } catch (error) {
-      console.error("Error uploading!! TWT", error);
+      console.error("Image uploading failed. Better luck next time!", error);
     }
   }
 

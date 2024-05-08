@@ -1,5 +1,4 @@
 import { useState } from "react";
-// import createUser from '../utilities/user-services'
 import { signUp } from "../../utilities/users-api";
 
 function SignUp() {
@@ -17,10 +16,10 @@ function SignUp() {
     e.preventDefault();
     try {
       await signUp(state);
-      alert("sign up successful");
+      alert("Sign up is successful! Please sign in now to have a new home!");
     } catch (error) {
       console.log(error);
-      alert("An error occurred. Too bad.");
+      alert("An error occurred. Please try again!");
     }
   }
 
