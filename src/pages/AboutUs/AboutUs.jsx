@@ -20,8 +20,8 @@ const AboutUs = () => {
     },
     {
       name: 'Lionel',
-      title: 'The Dark Knight, AKA Team MVP',
-      description: 'Because he is the unseen hero the team needs, but not the one we deserve.'
+      title: 'Leeching Lurker, AKA Team MVP (Mostly Vacant Participant)',
+      description: 'I got hard carried by my team mates'
     }
   ];
 
