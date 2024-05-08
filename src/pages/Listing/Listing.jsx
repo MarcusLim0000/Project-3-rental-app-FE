@@ -27,10 +27,9 @@ function Listing() {
   }, []);
 
   return (
-    <div className="listing-container">
+    <div>
       <h1 className="listing-header">Listings</h1>
-     
-      <br />
+     <div className="listings-container">
 
     {property.map((property) => { 
       return(<div className="listing-description">
@@ -38,6 +37,7 @@ function Listing() {
          
       </div>)
    })}
+   </div>
     </div>
   );
 }

@@ -76,6 +76,9 @@ function Profile(props) {
     return (
         <div>
             <h1 className ="user-title">Welcome, {user.name}</h1>
+            <Link to="/create-listing" className="link-button">CREATE NEW LISTING</Link>
+            <br />
+            <div className="listings-container">
             {userProperty.map((property) => (
                 <div key={property.objId}>
                     <DisplayListing property={property} />
@@ -85,7 +88,8 @@ function Profile(props) {
                 </div>
             ))}
             <br />
-            <Link to="/create-listing">CREATE NEW LISTING</Link>
+            
+        </div>
         </div>
     );
 }
