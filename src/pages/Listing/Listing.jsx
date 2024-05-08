@@ -7,20 +7,15 @@ function Listing() {
   const [property, setProperty] = useState([
     
   ]);
-
+  const fetchListings = async () => {
+    try {
+      const data = await getAvailableListing()
+      setProperty(data);
+    } catch (error) {
+      console.error("Error fetching listings:", error);
+    }
+  };
   useEffect(() => {
-    const fetchListings = async () => {
-      try {
-        
-        //https://project-3-rental-app-be.onrender.com
-
-        const data = await getAvailableListing()
-        setProperty(data);
-      } catch (error) {
-        console.error("Error fetching listings:", error);
-      }
-    };
-
     fetchListings();
   }, []);
 
@@ -28,6 +23,7 @@ function Listing() {
     try {
       const rent = {availability: false}
       await rentListing(id,rent)
+      fetchListings()
     }
     catch (error) {
       console.log(error)
