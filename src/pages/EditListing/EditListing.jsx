@@ -72,7 +72,7 @@ function EditListing() {
   };
 
   return (
-    <div>
+    <div className='edit-listing-container'>
       <h1>Edit Listing</h1>
       <form onSubmit={handleSubmit}>
         <label>
