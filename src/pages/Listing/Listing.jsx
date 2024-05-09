@@ -56,9 +56,9 @@ function Listing() {
      <div className="listings-container">
 
     {property.map((property) => { 
-      return(<div className="listing-description">
+      return(<div className="listing-item">
          <DisplayListing property={property}/>
-         <button onClick={()=>rentApartment(property._id)}>RENT</button>
+         <button className="rent-button" onClick={()=>rentApartment(property._id)}>RENT</button>
       </div>)
    })}
    </div>
