@@ -1,4 +1,5 @@
 import "./App.css";
+import {Helmet} from "react-helmet";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import AuthPage from "./pages/AuthPage/AuthPage";
@@ -16,6 +17,12 @@ function App() {
 
   return (
     <div className="App">
+      <Helmet>
+                <meta charSet="utf-8" />
+                <title>Rent Haven</title>
+                <link rel="canonical" href="https://project-3-rental-app-fe.vercel.app/" />
+                <meta name="description" content="Rental web application" />
+            </Helmet>
       {user ? (
         <Router>
           <Navbar user={user} setUser={setUser} />
