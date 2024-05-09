@@ -64,99 +64,112 @@ function CreateListing() {
 
   return (
     <div className="create-listing-container">
-      <h1>Create Listing</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Title:
+    <h1>Create Listing</h1>
+    <form onSubmit={handleSubmit}>
+      <label>
+        Title:
         <input
-          placeholder="title"
+          placeholder="Title"
           name="title"
           type="text"
           value={newListing.title}
           onChange={handleChange}
-        ></input>
-        </label>
-        <label>
-          Size:
+        />
+      </label>
+      <label>
+        Size (sqm):
         <input
-          placeholder="size in sqm"
+          placeholder="Size"
           name="size"
           type="number"
           value={newListing.size}
           onChange={handleChange}
-        ></input>
-        </label>
-        <label>
-          Description:
+        />
+      </label>
+      <label>
+        Description:
         <input
-          placeholder="description"
+          placeholder="Description"
           name="description"
           type="text"
           value={newListing.description}
           onChange={handleChange}
-        ></input>
-        </label>
-        <label>
-          Rental:
+        />
+      </label>
+      <label>
+        Rental (USD):
         <input
-          placeholder="rental per month in USD"
+          placeholder="Price"
           name="price"
           type="number"
           value={newListing.price}
           onChange={handleChange}
-        ></input>
-        </label>
-        <label>
-          Location:
+        />
+      </label>
+      <label>
+        Location:
         <input
-          placeholder="location"
+          placeholder="Location"
           name="location"
-          type="String"
+          type="text"
           value={newListing.location}
           onChange={handleChange}
-        ></input>
-        </label>
-        <br/>
-        <label>
-          Bedrooms: 
-        <select name="bedrooms" onChange={handleChange} value={newListing.bedrooms}>
-          <option value={0}>0</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
+        />
+      </label>
+      <label>
+        Bedrooms:
+        <select
+          name="bedrooms"
+          value={newListing.bedrooms}
+          onChange={handleChange}
+        >
+          {[0, 1, 2, 3, 4, 5].map((num) => (
+            <option key={num} value={num}>
+              {num}
+            </option>
+          ))}
         </select>
-        </label>
-        <label>Bathrooms: 
-        <select name="bathrooms" onChange={handleChange} value={newListing.bathrooms}>
-          <option value={0}>0</option>
-          <option value={1}>1</option>
-          <option value={2}>2</option>
-          <option value={3}>3</option>
-          <option value={4}>4</option>
-          <option value={5}>5</option>
+      </label>
+      <label>
+        Bathrooms:
+        <select
+          name="bathrooms"
+          value={newListing.bathrooms}
+          onChange={handleChange}
+        >
+          {[0, 1, 2, 3, 4, 5].map((num) => (
+            <option key={num} value={num}>
+              {num}
+            </option>
+          ))}
         </select>
-        </label>
+      </label>
+      <div>
+        <label htmlFor="fileInput">Images:</label>
+        <input
+          id="fileInput"
+          type="file"
+          accept="image/*"
+          onChange={(e) => setFile(e.target.files[0])}
+        />
+        <button type="button" onClick={handleUpload}>
+          Upload
+        </button>
+      </div>
+      {newListing.images.length > 0 && (
         <div>
-          {" "}
-          <span>Images: </span>
-          <br />
-          <input
-            type="file"
-            id='fileInput'
-            onChange={(e) => setFile(e.target.files[0])}
-          ></input>
-          <button key="upload" type="button" onClick={handleUpload}>
-            Upload
-          </button>
-          <button key="submit" type="submit">
-            Submit
-          </button>
+          <h3>Uploaded Images:</h3>
+          <ul>
+            {newListing.images.map((image, index) => (
+              <li className="uploaded-image" key={index}>{image}</li>
+            ))}
+          </ul>
         </div>
-      </form>
-    </div>
-  );
+      )}
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+);
 }
 
 export default CreateListing;
