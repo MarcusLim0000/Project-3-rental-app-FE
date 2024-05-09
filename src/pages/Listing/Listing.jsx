@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { getAvailableListing, rentListing } from "../../utilities/users-api";
 
 function Listing() {
-  const [property, setProperty] = useState([
-    
-  ]);
+  const [property, setProperty] = useState([]);
+  const [sortOrder, setSortOrder] = useState("asc");
+
   const fetchListings = async () => {
     try {
       const data = await getAvailableListing()
@@ -30,9 +30,29 @@ function Listing() {
     }
   }
 
+  function handleSort() {
+    const sortedProperty = [...property].sort((a, b) => {
+      if (sortOrder === "asc") {
+        return a.price - b.price;
+      } else {
+        return b.price - a.price;
+      }
+    });
+    setProperty(sortedProperty);
+    setSortOrder(sortOrder === "asc" ? "desc" : "asc");
+  }
+
   return (
     <div>
       <h1 className="listing-header">Listings</h1>
+      <div className="toggle-container">
+        <label className="toggle-switch">
+          <input type="checkbox" onClick={handleSort} />
+          <span className="toggle-slider round"></span>
+        </label>
+        <span>{sortOrder === "asc" ? "Most expensive" : "Cheapest"}</span>
+      </div>
+
      <div className="listings-container">
 
     {property.map((property) => { 
