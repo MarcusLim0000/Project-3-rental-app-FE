@@ -39,11 +39,11 @@ function Profile(props) {
     return (
         <div>
             <h1 className ="user-title">Welcome, {user.name}</h1>
-            <Link to="/create-listing" className="link-button">CREATE NEW LISTING</Link>
+            <Link to="/create-listing" className="link-button">+ Create New Listing</Link>
             <br />
             <div className="listings-container">
             {userProperty.map((property) => (
-                <div >
+                <div className="listing-item">
                     <DisplayListing property={property} />
                     <button onClick={()=>{
                         handleDelete(property._id)

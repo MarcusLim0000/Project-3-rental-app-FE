@@ -94,6 +94,7 @@ function EditListing() {
         <label>
           Description:
           <input
+          type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
@@ -154,6 +155,7 @@ function EditListing() {
         </label> */}
         <label>
           Availability:
+          <br />
           <input
             type="checkbox"
             checked={availability}

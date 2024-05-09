@@ -50,7 +50,7 @@ function SignUp() {
           value={state.password}
           onChange={handleChange}
         ></input>
-        <button type="submit">SIGN UP</button>
+        <button type="submit">Sign Up</button>
       </form>
     </div>
   );
