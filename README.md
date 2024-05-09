@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+# Rent Haven
+Rent Haven is a MERN (MongoDB, Express.js, React.js, Node.js) web application that facilitates renting and managing property listings. 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Users can sign up, sign in, create property listings, edit or delete their listings, upload pictures using Cloudinary, and rent apartments from available listings.
 
-## Available Scripts
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- **User Authentication**
+  - Allow users to sign up with email and password.
+  - Enable users to sign in using registered credentials.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Property Listings**
+  - Create, read, update, and delete property listings (CRUD operations).
+  - Edit existing property listings.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Image Upload**
+  - Upload property images seamlessly using Cloudinary integration.
 
-### `npm test`
+- **Rental Functionality**
+  - Browse available property listings.
+  - Rent apartments from the available listings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Screenshots
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- User Listings Page:
+  ![User Listings Page]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Property Listings:
+  ![Property Listings]
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Technologies Used
 
-### `npm run eject`
+- **Frontend**
+  - React.js
+  - React Router
+  - Axios (for API requests)
+  - Cloudinary (for image uploads)
+  - Vercel (for client deployment)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **Backend**
+  - Node.js
+  - Express.js
+  - MongoDB (with Mongoose for data modeling)
+  - Render (for deployment)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Getting Started
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Visit the deployed Rent Haven app:
+- **Frontend URL:** [Rent Haven](https://project-3-rental-app-fe.vercel.app/)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Next Steps
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Here are some planned future enhancements (icebox items) for Rent Haven:
+- Implement real-time chat feature between tenants and property owners.
+- Enhance search functionality with advanced filters (e.g., price range, location).
+- Integrate payment processing for rental transactions.
