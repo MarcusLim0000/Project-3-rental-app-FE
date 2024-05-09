@@ -63,7 +63,7 @@ function CreateListing() {
   }
 
   return (
-    <div>
+    <div className="create-listing-container">
       <h1>Create Listing</h1>
       <form onSubmit={handleSubmit}>
         <label>
