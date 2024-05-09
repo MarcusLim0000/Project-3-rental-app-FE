@@ -2,28 +2,30 @@
   padding: 20px;
   }
   
-  .listing-header {
-    font-size: 35px;
-    font-weight: bold;
-    color: #333;
-    padding-top: 50px;
+.listing-header {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  padding-top: 50px;
   }
   
-  .listing-description {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-  }
-  
-  .zoom-button {
-    background-color: #007bff;
+  .rent-button {
+    background-color: #007bff; /* Blue color, you can change this */
     color: #fff;
-    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
+
+  .rent-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+
 
   .toggle-container {
     display: flex;
@@ -81,3 +83,4 @@
     -ms-transform: translateX(26px);
     transform: translateX(26px);
   }
+

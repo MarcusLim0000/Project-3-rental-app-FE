@@ -1,3 +1,25 @@
 .create-listing-container {
-    margin-top: 80px;
+    max-width: 1000px;
+    margin: 70px auto;
+    padding: 20px;
+    background-color: var(--tan-1);
+    border: 1px solid var(--tan-3);
+    border-radius: 10px;
+    
+  }
+  
+  .create-listing-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-dark);
+
+  }
+
+.uploaded-image {
+    width: 200px; 
+    height: 100px; 
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 5px; 
+    margin-bottom: 10px; 
 }

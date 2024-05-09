@@ -2,7 +2,7 @@ import "./AuthPage.css";
 import { useState } from "react";
 import SignIn from "../../components/SignIn/SignIn";
 import SignUp from "../../components/SignUp/SignUp";
-import logo from "../../assets/rental-app-logo tpn.jpeg";
+import logo from "../../assets/rental-app-logo tpn.png";
 
 function AuthPage({ setUser }) {
   const [choice, setChoice] = useState(false);
@@ -13,7 +13,7 @@ function AuthPage({ setUser }) {
           <img
             src={logo}
             alt="Logo"
-            style={{ width: "200px", height: "auto" }}
+            style={{ width: "500px", }}
           />
         </div>
         {choice ? <SignIn setUser={setUser} /> : <SignUp setUser={setUser} />}
