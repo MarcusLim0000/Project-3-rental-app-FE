@@ -50,9 +50,7 @@ form {
     margin-top: 10px;
   }
 
-  label {
-    min-width: 100px; 
-  }
+ 
   
   button[type="submit"] {
     width: 100%;

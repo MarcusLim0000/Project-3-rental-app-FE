@@ -13,7 +13,7 @@ function AuthPage({ setUser }) {
           <img
             src={logo}
             alt="Logo"
-            style={{ width: "500px", }}
+            style={{ width: "400px", }}
           />
         </div>
         {choice ? <SignIn setUser={setUser} /> : <SignUp setUser={setUser} />}

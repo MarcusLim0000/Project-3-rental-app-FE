@@ -48,7 +48,7 @@ function Listing() {
       <div className="toggle-container">
         <label className="toggle-switch">
           <input type="checkbox" onClick={handleSort} />
-          <span className="toggle-slider round"></span>
+          <span className="toggle-slider"></span>
         </label>
         <span>{sortOrder === "asc" ? "Most expensive" : "Cheapest"}</span>
       </div>

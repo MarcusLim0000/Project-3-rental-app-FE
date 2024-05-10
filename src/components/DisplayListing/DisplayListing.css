@@ -32,6 +32,7 @@
   margin-top: 0.5rem;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 0.3rem;
 }
 
 .listing-price {
@@ -41,6 +42,7 @@
   margin-top: 0.5rem;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 0.3rem;
 }
 
 .listing-location {
@@ -49,14 +51,19 @@
   margin-top: 0.5rem;
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 0.3rem;
 }
+
 
 .listing-features {
   display: flex;
-  gap: 0.5rem;
+  align-items: center;
   font-size: 0.75rem;
   color: #6b7280;
   font-weight: 600;
+  margin-top: 0.5rem;
+  margin-left: 10px;;
+  margin-bottom: 0.3rem;;
 }
 
 .image-container {
@@ -78,3 +85,10 @@
 
 }  
 
+.listing-features span {
+  margin-right: 0.5rem; /* Adjust margin between spans */
+}
+
+.listing-features span:last-child {
+  margin-right: 0; /* Remove margin from the last span */
+}

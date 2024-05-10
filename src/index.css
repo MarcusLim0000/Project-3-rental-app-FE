@@ -28,6 +28,58 @@ body {
   height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .form-container {
+    padding: 2vmin;
+  }
+  
+  .section-heading {
+    font-size: 3vmin;
+  }
+  
+  form {
+    grid-template-columns: 1fr;
+  }
+  
+  label {
+    font-size: 3vmin;
+  }
+  
+  input {
+    font-size: 3vmin;
+    padding: 1.5vmin;
+  }
+  
+  button, a.button {
+    font-size: 3vmin;
+    padding: 1.5vmin;
+  }
+}
+
+/* For mobile devices (e.g., iPhone) */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 1vmin;
+  }
+  
+  .section-heading {
+    font-size: 2.5vmin;
+  }
+  
+  label {
+    font-size: 2.5vmin;
+  }
+  
+  input {
+    font-size: 2.5vmin;
+    padding: 1vmin;
+  }
+  
+  button, a.button {
+    font-size: 2.5vmin;
+    padding: 1vmin;
+  }
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
