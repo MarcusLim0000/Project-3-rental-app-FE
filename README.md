@@ -25,10 +25,12 @@ Users can sign up, sign in, create property listings, edit or delete their listi
 ## Screenshots
 
 - User Listings Page:
-  ![User Listings Page]
+  ![image](https://github.com/MarcusLim0000/Project-3-rental-app-FE/assets/151606217/29756e9e-096b-4bd8-a0aa-44d695c7001b)
+
 
 - Property Listings:
-  ![Property Listings]
+  ![image](https://github.com/MarcusLim0000/Project-3-rental-app-FE/assets/151606217/ba5eac4e-3786-4adc-888f-cd9fb1990099)
+
 
 ## Technologies Used
 
